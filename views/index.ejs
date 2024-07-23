@@ -1,0 +1,27 @@
+<div class="author">
+    <h3 class="author_heading">
+        SDS News Portal
+    </h3>
+    <p class="author_body">
+        Empowering You with Every Headline: Your Passport to the Planet's Pulse
+    </p>
+</div>
+
+<!-- <img src="/images/1324832.png" alt="gojo satoru" class="heroImage" width="200" height="250"> -->
+<section class="articles">
+    <h2 class="article_heading">Latest News</h2>
+    <ul class="articles_ul">
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id%>">
+                <span><%- post.title %></span>
+                <span class="article_list_date"><%= post.updatedAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+
+    <% if (nextPage != null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Articles</a>
+    <% } %>  
+</section>
